@@ -1,0 +1,27 @@
+name: Node CI
+
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: Install dependencies 👷‍♂️
+        run: npm install
+      - name: Execute Lint 🧼
+        run: npm run lint
+      - name: Unit Testing 🧪
+        run: npm run test
