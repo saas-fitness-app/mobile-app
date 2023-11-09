@@ -9,3 +9,4 @@
 - [ ] Separate Styles from components/Screens to external css families
 - [ ] Images, fonts... for the UI of the app
 - [ ] Create a proper carrousel for the WelcomePage with images and information about the app
+- [ ] Create screen for calculate macros
